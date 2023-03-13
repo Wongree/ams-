@@ -1,11 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 export const Detail = (data) => {
   const { name, description } = data.data;
-
-  useEffect(() => {
-    console.log(data);
-  }, []);
+  
   return (
     <>
       <div>
