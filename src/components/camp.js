@@ -1,22 +1,13 @@
-import React, { useState } from 'react';
-// import './InputBox.css';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-function InputBox(props) {
-  const [text, setText] = useState('');
-
-  const handleChange = (event) => {
-    setText(event.target.value);
-    if (props.onChange) {
-      props.onChange(event.target.value);
-    }
-  };
-
+export const Camp = (data) => {
+  const { name, id } = data.data;
   return (
-    <div className="input-box">
-      <label>{props.label}</label>
-      <input type={props.type} value={text} onChange={handleChange} placeholder={props.placeholder} />
-    </div>
+    <Link to={`/event/${id}`}>
+      <div className='rounded shadow-md h-[100px] p-2'>
+        <div className='text-black'>{name}</div>
+      </div>
+    </Link>
   );
-}
-
-export default InputBox;
+};

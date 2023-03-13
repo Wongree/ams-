@@ -2,20 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./pages/Layout";
-import Login from "./pages/Login";
-import Home from "./pages/Home";
-import Create from "./pages/Create";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Layout from './pages/Layout';
+import Login from './pages/Login';
+import Home from './pages/Home';
+import Create from './pages/Create';
+import { CampDetail } from './pages/CampDetail';
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path='/' element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="login" element={<Login />} />
-          <Route path="create" element={<Create />} />
+          <Route path='login' element={<Login />} />
+          <Route path='create' element={<Create />} />
+          <Route path='event/:id' element={<CampDetail />} />
         </Route>
       </Routes>
     </BrowserRouter>
